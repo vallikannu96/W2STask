@@ -1,0 +1,44 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card tab2-card">
+                <div class="card-header">
+                    <h5>Add Employee Skill</h5>
+                </div>
+                <div class="card-body tab2-card" *ngIf="showScreen">
+                    <ngb-tabset class="tab-coupon">
+                        <ngb-tab title="EmployeeSkills">
+                            <ng-template ngbTabContent>                                                                                                                                        <div class="tab-pane fade active show" id="account" role="tabpanel"
+                                        aria-labelledby="account-tab">
+                                    <form [formGroup]="employeeSkillForm" class="needs-validation user-add">
+                                        <h4>Add Emplpoyee Skill</h4>
+                                        <div class="form-group row">
+                                            <label for="validationCustom2" class="col-xl-3 col-md-4"><span>*</span>
+                                                Skill</label>
+                                            <select class="form-control font-d col-xl-8 col-md-7" formControlName="skill">
+                                                <option *ngFor="let skill of skills_list" [value]="skill.id">{{skill.name}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span>Percentage</label>
+                                            <input class="form-control col-xl-8 col-md-7" id="validationCustom1"
+                                                type="text" formControlName="percentage">
+                                                <div class="col-xl-3"></div>
+                                                <control-messages class="validation-messages col-xl-8 col-md-7" [control]="employeeSkillForm.controls.percentage">
+                                                </control-messages>
+                                        </div>
+                                    </form>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                    <div class="pull-right" style="margin-right: 112px;">
+                        <button type="submit" (click)="onemployeeSkillFormSubmit()" [disabled]="employeeSkillForm.invalid" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

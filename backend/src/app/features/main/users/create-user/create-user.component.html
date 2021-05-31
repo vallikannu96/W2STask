@@ -1,0 +1,74 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card tab2-card">
+                <div class="card-header">
+                    <h5> Add User</h5>
+                </div>
+                <div class="card-body tab2-card">
+                    <ngb-tabset class="tab-coupon">
+                        <ngb-tab title="Account">
+                            <ng-template ngbTabContent>                                                                                                                                        <div class="tab-pane fade active show" id="account" role="tabpanel"
+                                        aria-labelledby="account-tab">
+                                    <form [formGroup]="accountForm" class="needs-validation user-add">
+                                        <h4>Account Details</h4>
+                                        <div class="form-group row">
+                                            <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>
+                                                First Name</label>
+                                            <input class="form-control col-xl-8 col-md-7" id="validationCustom0"
+                                                type="text" formControlName="first_name">
+                                                <div class="col-xl-3"></div>
+                                                <control-messages class="validation-messages col-xl-8 col-md-7" [control]="accountForm.controls.first_name">
+                                                </control-messages>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Last
+                                                Name</label>
+                                            <input class="form-control col-xl-8 col-md-7" id="validationCustom1"
+                                                type="text" formControlName="last_name">
+                                                <div class="col-xl-3"></div>
+                                                <control-messages class="validation-messages col-xl-8 col-md-7" [control]="accountForm.controls.last_name">
+                                                </control-messages>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom2" class="col-xl-3 col-md-4"><span>*</span>
+                                                Email</label>
+                                            <input class="form-control col-xl-8 col-md-7" id="validationCustom2"
+                                                type="text" formControlName="email">
+                                                <div class="col-xl-3"></div>
+                                                <control-messages class="validation-messages col-xl-8 col-md-7" [control]="accountForm.controls.email">
+                                                </control-messages>
+                                                <div class="col-xl-3"></div>
+                                                <span *ngIf="showEmailErrorMessage" class="validation-messages col-xl-8 col-md-7">Email already exists</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom2" class="col-xl-3 col-md-4"><span>*</span>
+                                                Password</label>
+                                            <input class="form-control col-xl-8 col-md-7" id="validationCustom5"
+                                                type="password" formControlName="password">
+                                                <div class="col-xl-3"></div>
+                                                <control-messages class="validation-messages col-xl-8 col-md-7" [control]="accountForm.controls.password">
+                                                </control-messages>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom2" class="col-xl-3 col-md-4"><span>*</span>
+                                                User type</label>
+                                            <select class="form-control font-d col-xl-8 col-md-7" formControlName="user_type">
+                                                <option *ngFor="let type of userTypes" [value]="type.id">{{type.value}}</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                    <div class="pull-right" style="margin-right: 112px;">
+                        <button type="submit" (click)="onAccountFormSubmit()" [disabled]="accountForm.invalid || showEmailErrorMessage" class="btn btn-primary">Save </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

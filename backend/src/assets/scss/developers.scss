@@ -1,0 +1,32 @@
+.validation-messages {
+    float: left;
+    margin: 6px 0px;
+    padding-left: unset;
+    color: #ff8084;
+}
+.error-msg{
+    color: #ff4d53;
+}
+.font-d{
+   font-size: 0.9rem;
+}
+
+.btn-default{
+    background-color: #dddde1 !important;
+    border-color: #dddde1 !important;
+}
+.btn-small{
+    font-size: 10px;
+    padding: 3px 17px;
+}
+
+.form-invalid{
+    cursor: not-allowed;
+}
+.modal-xl{
+    max-width: 100% !important;
+    .modal-lg{
+        width: 85% !important;
+        max-width: 85% !important;
+    }
+}
